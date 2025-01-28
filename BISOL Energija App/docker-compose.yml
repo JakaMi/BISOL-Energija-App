@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: energy_api
+    environment:
+      DATABASE_URL: sqlite:///./data/energy_data.db  # Pot do SQLite baze
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data  # Shranjevanje baze na gostiteljskem sistemu

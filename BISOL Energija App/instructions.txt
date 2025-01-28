@@ -1,0 +1,37 @@
+Cilj je ustvariti preprosto aplikacijo za prikaz porabe in proizvodnje električne energije strank ter s tem povezane stroške (od porabljene energije iz omrežja) in/ali prihodke (od oddane energije v omrežje). V prilogi se nahajajo časovne vrste porabe in proizvodnje na posameznem merilnem mestu ter SIPX cene električne energije (https://www.bisol-energija.si/dinamicne-cene-elektrike-v-zivo). Pri pripravi upoštevaj, da je strošek/prihodek lastnika merilnega mesta enak zmnožku porabe/proizvodnje energije v posameznem časovnem intervalu in cene SIPX. Na podlagi teh podatkov oblikuj jasno razmejen backend ali frontend aplikacije. Torej nujna je izpolnitev ene naloge, v kolikor pa imate znanja na obeh področjih, pripravite kombinacijo obeh nalog. Predlagane tehnologije pri posamezni nalogi lahko nadomestite s tehnologijami, ki jih poznate, v kolikor vam predlagane niso poznane.
+
+ 
+
+Podatki časovnih serij, ki jih boste potrebovali so v prilogi: 20240101_20241231_historical_cons_prod_and_prices.csv. Časovne serije porabe (npr. »customer00_cons_kWh«) predstavljajo urno porabo v kWh (odjem energije iz omrežja), medtem ko časovne serije proizvodnje (npr.« customer02_prod_kWh«) predstavljajo proizvodnjo v kWh (oddaja energije v omrežje). Časovna serija »SIPX_EUR_kWh« predstavlja obračunsko ceno v EUR/kWh, po kateri stranka v dotični uri porablja/proizvaja električno energijo. Posamezna stranka je lahko bodisi samo porabnik, bodisi samo proizvajalec, ali pa kombinacija.
+
+    Naloga - Backend
+
+    Smiselno oblikuj bazo in primerno strukturiraj podatke.
+    Pripravi backend API, ki bo lahko kasneje uporabljen na frontendu.
+        CRUD operacije za stranke, časovne serije ipd.
+    Uporabi framework FastAPI z OpenAPI dokumentacijo.
+        Pri manevriranju s podatki poskrbi za ustrezno validacijo s pydantic.
+    Pripravi preprost Python client, kot simulacijo uporabe v drugem service-u.
+
+Izbrana naloga naj bo zapakirana v Docker kontejnerje ter po potrebi orkestrirana z docker-compose. Za bonus točke štejejo vsi elementi, ki naredijo projekt čimbolj celovit in uporaben v praksi. Npr. optimizacija hitrosti delovanja, dodatni varnostni elementi ipd. 
+
+ali
+
+ 
+
+    Naloga - Frontend
+
+    Oblikuj UI pregled za vsako stranko, ki bo vseboval vsaj:
+        Izbor poljubnega intervala za prikaz podatkov.
+        Pregled količin porabljene energije ter stroškov.
+    Za glavni framework izberi Vue ali React.
+    Za oblikovanje uporabi framework Bootstrap prilagojen po meri na CGP BISOL Energije.
+    Grafi naj bodo pripravljeni s frameworkom Chart.js.
+    Poskrbite za varnost in validacijo podatkov, ki jih vnese stranka.
+    Prikazi, naj bodo prilagojeni za vse naprave (responsive design).
+
+ 
+
+ 
+
+Izbrana naloga naj bo zapakirana v Docker kontejnerje ter po potrebi orkestrirana z docker-compose. Za bonus točke štejejo vsi elementi, ki naredijo projekt čimbolj celovit in uporaben v praksi. Npr. optimizacija hitrosti delovanja, dodatni varnostni elementi ipd. Rešitve z dokumentacijo v roku tedna dni vrnite na moj e-mail (matej.pirnat@bisol-energija.si). Cilj te naloge je prikaz znanja, kreativnosti ter samoiniciativnosti posameznika. Happy coding!
